@@ -1,0 +1,146 @@
+.airQualityIndex-light {
+    background-color: white;
+    color: black;
+    height: 300px;
+    width: 460px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+
+        .headingText {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .location{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            img{
+                width: 24px;
+                height: 22px;
+            }
+
+            .cityname{
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .mid {
+        display: flex;
+
+        .midleft {
+            flex: 70%;
+            display: flex;
+            gap: 10px;
+
+            .midIcon {
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            .midQualityText {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+
+                .qualityHead {
+                    font-size: 24px;
+                    font-weight: 500;
+                }
+
+                .qualityQuote {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .midright {
+            flex: 30%;
+            display: grid;
+            align-items: center;
+            justify-content: right;
+
+            .refreshButton {
+                display: grid;
+                align-items: right;
+                justify-content: right;
+
+                button {
+                    border: none;
+                    background-color: rgba(63, 63, 255, 0.272);
+                    padding: 6px 14px;
+                    border-radius: 8px;
+                    width: 100px;
+                    color: blue;
+                    font-size: 14px;
+                    font-weight: 600;
+                    font-family: system-ui;
+                    cursor: pointer;
+                }
+
+                button:hover{
+                    background-color: rgba(0, 128, 0, 0.275);
+                    color: green;
+                    font-size: 14.5px;
+                }
+            }
+        }
+    }
+
+    .foot {
+        display: flex;
+        gap: 20px;
+
+        .gasIndexBox {
+            background-color: rgba(63, 63, 255, 0.272);
+            width: 80px;
+            height: 110px;
+            padding: 10px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: blue;
+
+            .quantity{
+                text-align: center;
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.airQualityIndex-dark {
+    background-color: #1b1b1b;
+    color: white;
+
+    #refBtn {
+        color: white;
+    }
+
+    #lctn{
+        filter: invert(1);
+    }
+
+    #gsIndBx{
+        color: white;
+    }
+}

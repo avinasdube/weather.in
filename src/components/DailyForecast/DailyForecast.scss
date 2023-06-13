@@ -1,0 +1,64 @@
+// daily forecast component styling
+        
+.dailyForecast{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+
+    .categoryBox{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        width: 100%;
+
+        .weatherInfo-light{ 
+            background-color: white;
+            color: black;
+            height: 150px;
+            width: 110px;
+            border-radius: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+        
+            img{
+                width: 80%;
+                height: 50%;
+                border-radius: 20px;
+            }
+            
+            .dayname{
+                margin-top: 10px;
+                font-size: 18px;
+                height: 20%;
+            }
+            
+            .tempdetails{
+                height: 20%;
+            }
+        }
+
+        .weatherInfo-dark{
+            background-color: #1b1b1b;
+            color:white;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .dailyForecast{
+        align-items: center;
+        justify-content: center;
+
+        .categoryBox{
+            width: 500px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+

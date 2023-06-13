@@ -1,0 +1,44 @@
+$primaryfont : 'system-ui';
+$bgcolor: #ffffff;
+$primecolor: #161616;
+$secondcolor: #ff5100;
+
+// header section styling
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+
+    .headerLeft {
+        .notificationSection {
+            .currentTimeDate {
+
+                .currentTime {
+                    font-size: 40px;
+                    text-align: left;
+                    font-weight: 500;
+                    color: blue;
+                }
+
+                .currentMonthYear {
+                    font-size: 18px;
+                    text-align: left;
+                }
+            }
+
+            .greetCard {
+                font-size: 22px;
+                color: blue;
+            }
+        }
+    }
+
+    .headerRight{
+    }
+}
+
+.headerContainer-dark{
+    color: white;
+}
+

@@ -1,0 +1,28 @@
+.modeToggleBox{
+
+    .toggleDiv{
+        background-color: rgb(239, 239, 239);
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span{
+            width: 35px;
+            height: 35px;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .span-Light{
+            background-image: url('../../assets/icons/lightmode.png');
+        }
+
+        .span-Dark{
+            background-image: url('../../assets/icons/darkmode.png');
+        }
+    }
+
+}

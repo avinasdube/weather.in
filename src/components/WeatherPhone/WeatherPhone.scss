@@ -1,0 +1,77 @@
+.weatherPhoneCard-light{
+    height: 490px;
+    width: 380px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+
+    .cardHead{
+        height: 10%;
+
+        .location{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+
+            img{
+                width: 30px;
+                height: 28px;
+            }
+
+            .cityname{
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .cardMid{
+        height: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        .dateToday{
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .temp{
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .remarks{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .cardFoot{
+        height: 25%;
+        padding: 10px;
+
+        .extraDetails{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 35px;
+
+            label{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.weatherPhoneCard-dark{
+    background-color: #1b1b1b;
+    color:white;
+
+    #lctn{
+        filter: invert(1);
+    }
+}

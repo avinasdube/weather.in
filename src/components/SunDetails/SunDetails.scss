@@ -1,0 +1,78 @@
+.sunDetails-light {
+    background-color: white;
+    color: black;
+    height: 300px;
+    width: 460px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+
+        .headingText {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .mid{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .sunTimeCard{
+            background-color: rgba(63, 63, 255, 0.272);
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-radius: 20px;
+            padding: 10px;
+
+            .cityName{
+                font-weight: 500;
+                margin-left: 4px;
+            }
+
+            .sunInfoBox{
+                display: flex;
+
+                .detailBox{
+                    flex: 50%;
+                    display: flex;
+
+                    .Image{
+                        flex: 40%;
+                        display: grid;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .Details{
+                        flex: 60%;
+                        padding: 10px;
+                        margin-left: 20px;
+
+                        .Heading{
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
+
+                        .Timing{
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sunDetails-dark{
+    background-color: #1b1b1b;
+    color: white;
+}
