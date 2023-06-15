@@ -69,7 +69,7 @@ const Header = () => {
     
     // URL FOR AIR QUALITY DETAILS
 
-    const aqUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${APIKEY}`;
+    const aqUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${APIKEY}`;
 
     const fetchData = ()=>{
         axios(url).then((data)=>{
@@ -107,8 +107,6 @@ const Header = () => {
     useEffect(()=>{
         fetchData();
     },[city])
-
-    console.log(UseWeatherContext())
 
 
     return (

@@ -30,7 +30,7 @@ const AirQualityIndex = () => {
               <div className="mid">
                 <div className="midleft">
                   <div className="midIcon">
-                    <img src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt=''></img>
+                    <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt=''></img>
                   </div>
                   <div className="midQualityText">
                     <div className="qualityHead">

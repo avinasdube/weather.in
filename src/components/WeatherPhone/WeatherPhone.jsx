@@ -36,7 +36,7 @@ const WeatherPhone = () => {
                         </div>
                         <div className='cardMid'>
                             <div className='image'>
-                                <img src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt='' id='wthrimg'></img>
+                                <img src={`https://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`} alt='' id='wthrimg'></img>
                             </div>
                             <div className='dateToday' id='dtdy'>
                                 Today, {currentDateToday} {currentMonth}
