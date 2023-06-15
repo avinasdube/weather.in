@@ -7,4 +7,4 @@ export const themes = {
     light: 'light',
 };
 
-export const ModeContext = createContext({});
+export const ModeContext = createContext();

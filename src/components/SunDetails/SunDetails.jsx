@@ -3,90 +3,75 @@ import './SunDetails.scss';
 import { ModeContext } from '../../context/ModeContext';
 import sunrise from '../../assets/icons/sunrise.png';
 import sunset from '../../assets/icons/sunset.png';
+import { UseWeatherContext } from '../../context/WeatherContext';
 
 const SunDetails = () => {
 
     const { theme } = useContext(ModeContext);
 
-    return (
-        <div className='sunDetailsBox'>
-            <div className={`sunDetails-light ${theme === 'light' ? 'sunDetails-light' : 'sunDetails-dark'}`}>
-                <div className='head'>
-                    <div className="headingText">
-                        Sunrise & Sunset
-                    </div>
+    // GETTING CURRENT DATA OF SELECTED CITY THROUGH API CALLED CONTEXT FILE
 
-                </div>
-                <div className='mid'>
-                    <div className='sunTimeCard'>
-                        <div className='cityName'>
-                            Gopalganj
-                        </div>
-                        <div className='sunInfoBox'>
-                            <div className='detailBox'>
-                                <div className='Image'>
-                                    <img src={sunrise} alt=''></img>
-                                </div>
-                                <div className='Details'>
-                                    <div className='Heading'>
-                                        Sunrise
-                                    </div>
-                                    <div className='Timing'>
-                                        4:40 AM
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='detailBox'>
-                                <div className='Image'>
-                                    <img src={sunset} alt=''></img>
-                                </div>
-                                <div className='Details'>
-                                    <div className='Heading'>
-                                        Sunset
-                                    </div>
-                                    <div className='Timing'>
-                                        6:53 PM
-                                    </div>
+    const { state: { current, city } } = UseWeatherContext();
+
+    function getSunrise(e) {
+        var s = new Date(e).toLocaleTimeString("en-US")
+        return s;
+    }
+
+    function getSunset(e) {
+        var s = new Date(e).toLocaleTimeString("en-US")
+        return s;
+    }
+
+    return (
+        <>
+            {
+                current ?
+                        <div className={`sunDetails-light ${theme === 'light' ? 'sunDetails-light' : 'sunDetails-dark'}`} id='sndtlbx'>
+                            <div className='head'>
+                                <div className="headingText" id='sndtlhead'>
+                                    Sunrise & Sunset
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className='sunTimeCard'>
-                        <div className='cityName'>
-                            Rajgir
-                        </div>
-                        <div className='sunInfoBox'>
-                            <div className='detailBox'>
-                                <div className='Image'>
-                                    <img src={sunrise} alt=''></img>
-                                </div>
-                                <div className='Details'>
-                                    <div className='Heading'>
-                                        Sunrise
+                            <div className='mid'>
+                                <div className='sunTimeCard' id='sntmcrd'>
+                                    <div className='cityName' id='ctnme'>
+                                        {city.city}
                                     </div>
-                                    <div className='Timing'>
-                                        4:40 AM
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='detailBox'>
-                                <div className='Image'>
-                                    <img src={sunset} alt=''></img>
-                                </div>
-                                <div className='Details'>
-                                    <div className='Heading'>
-                                        Sunset
-                                    </div>
-                                    <div className='Timing'>
-                                        6:53 PM
+                                    <div className='sunInfoBox'>
+                                        <div className='detailBox'>
+                                            <div className='Image'>
+                                                <img src={sunrise} alt='' id='snimg'></img>
+                                            </div>
+                                            <div className='Details'>
+                                                <div className='Heading' id='snhead'>
+                                                    Sunrise
+                                                </div>
+                                                <div className='Timing' id='sntme'>
+                                                    {getSunrise(current.sys.sunrise * 1000)}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='detailBox'>
+                                            <div className='Image'>
+                                                <img src={sunset} alt='' id='snimg'></img>
+                                            </div>
+                                            <div className='Details'>
+                                                <div className='Heading' id='snhead'>
+                                                    Sunset
+                                                </div>
+                                                <div className='Timing' id='sntme'>
+                                                    {getSunset(current.sys.sunset * 1000)}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    : ''
+            }
+        </>
     )
 }
 

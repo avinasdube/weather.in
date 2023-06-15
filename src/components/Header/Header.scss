@@ -5,40 +5,346 @@ $secondcolor: #ff5100;
 
 // header section styling
 
-.headerContainer {
+.headerContainer-light {
     display: flex;
+    height: 50px;
+    gap: 20px;
     justify-content: space-between;
-    height: 120px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
 
     .headerLeft {
-        .notificationSection {
-            .currentTimeDate {
+        flex: 85%;
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        background-color: whitesmoke;
+        padding: 0 10px;
+        gap: 20px;
+        border-radius: 8px;
 
-                .currentTime {
-                    font-size: 40px;
-                    text-align: left;
+        .logoSection{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .logo{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+    
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            .appName{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                font-family: system-ui;
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+
+        .locationSelector{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: +1;
+
+            .selectDropdown{
+                display: flex;
+                padding: 10px ;
+                border-radius: 8px;
+                align-items: center;
+                justify-content: center;
+                width: 190px;
+                gap: 60px;
+                margin-top: 4px;
+                background-color: white;
+                cursor: pointer;
+
+                .defaultCityName{
                     font-weight: 500;
-                    color: blue;
                 }
 
-                .currentMonthYear {
-                    font-size: 18px;
-                    text-align: left;
+                .arrowDownIcon{
+                    width: 5px;
+                    height: 5px;
+                    border-right: 2px solid black;
+                    border-bottom: 2px solid black;
+                    transform: rotate(45deg);
+                }
+
+                .arrowDownIcon-up{
+                    transform: rotate(225deg);
                 }
             }
 
-            .greetCard {
-                font-size: 22px;
-                color: blue;
+            .citiesList{
+                padding: 16px;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                border-radius: 8px;
+                width: 174px;
+                height: 400px;
+                margin-top: -20px;
+
+                .citiesScrollBox{
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
+    
+                    .options{
+                        margin-top: -10px;
+    
+                        option{
+                            margin-left: -44px;
+                            margin-bottom: -20px;
+                            padding: 6px;
+                            border-radius: 8px;
+                            font-weight: 400;
+                            cursor: pointer;
+                        }
+    
+                        option:hover{
+                            background-color: #e5e5e5;
+                        }
+                    }
+                }
+
+                .citiesScrollBox::-webkit-scrollbar{
+                    width: 0;
+                }
+            }
+
+            .citiesList.active{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(20px);
+                transition: 0.2s ease-in-out;
+            }
+
+            .citiesList.inactive{
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transform: 0.2s ease-in;
             }
         }
     }
 
     .headerRight{
+        flex: 15%;
+        display: flex;
+        position: relative;
     }
 }
 
 .headerContainer-dark{
-    color: white;
+    display: flex;
+    height: 50px;
+    gap: 20px;
+    justify-content: space-between;
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 20px;
+
+    .headerLeft {
+        flex: 85%;
+        display: flex;
+        align-items: left;
+        justify-content: space-between;
+        background-color: #2f2f2f;
+        padding: 0 10px;
+        gap: 20px;
+        border-radius: 8px;
+
+        .logoSection{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .logo{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+    
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+    
+            .appName{
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                font-family: system-ui;
+                font-size: 25px;
+                font-weight: 600;
+            }
+        }
+
+        .locationSelector{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: +1;
+
+            .selectDropdown{
+                display: flex;
+                padding: 10px;
+                border-radius: 8px;
+                align-items: center;
+                justify-content: center;
+                gap: 60px;
+                width: 190px;
+                margin-top: 4px;
+                background-color: #1b1b1b;
+                cursor: pointer;
+
+                .defaultCityName{
+                    font-weight: 500;
+                }
+
+                #arwicn{
+                    width: 5px;
+                    height: 5px;
+                    border-right: 2px solid white;
+                    border-bottom: 2px solid white;
+                    transform: rotate(45deg);
+                }
+
+                .arrowDownIcon-up{
+                    transform: rotate(225deg);
+                }
+            }
+
+            .citiesList{
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #1b1b1b;
+                border-radius: 8px;
+                width: 174px;
+                height: 400px;
+                margin-top: -20px;
+
+                .citiesScrollBox{
+                    overflow-y: auto;
+                    scroll-behavior: smooth;
+    
+                    .options{
+                        margin-top: -10px;
+    
+                        option{
+                            margin-left: -44px;
+                            margin-bottom: -20px;
+                            padding: 8px;
+                            border-radius: 8px;
+                            font-weight: 400;
+                            cursor: pointer;
+                        }
+    
+                        option:hover{
+                            background-color: #2f2f2f;
+                        }
+                    }
+                }
+
+                .citiesScrollBox::-webkit-scrollbar{
+                    width: 0;
+                }
+            }
+
+            .citiesList.active{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(20px);
+                transition: 0.2s ease-in-out;
+            }
+
+            .citiesList.inactive{
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transform: 0.2s ease-in;
+            }
+        }
+    }
+
+    .headerRight{
+        flex: 15%;
+        display: flex;
+        position: relative;
+    }
 }
 
+
+@media screen and (max-width: 1200px){
+
+    #hdrlft{
+        gap: 10px;
+        width: 200px;
+    }
+
+    #applgo{
+        width: 30px;
+        height: 30px;
+    }
+   
+
+    #appNm{
+        font-size: 14px;
+    }
+
+    #slctDrpdn{
+        margin-top: 6px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    #optn{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 510px){
+    .locationSelector{
+        width: 100px;
+    }
+
+    #slctDrpdn{
+        width: 80px;
+        gap: 20px;
+    }
+
+    #ctylst{
+        width: 70px;
+    }
+
+    #optn{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #slctDrpdn{
+        flex-direction: column;
+        gap: 2px;
+        padding: 6px 2px;
+        width: 70px;
+    }
+}

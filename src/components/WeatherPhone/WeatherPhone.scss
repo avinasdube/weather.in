@@ -1,12 +1,12 @@
 .weatherPhoneCard-light{
-    height: 490px;
+    height: 460px;
     width: 380px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
 
     .cardHead{
-        height: 10%;
+        height: 30px;
 
         .location{
             display: flex;
@@ -15,24 +15,30 @@
             gap: 5px;
 
             img{
-                width: 30px;
-                height: 28px;
+                width: 28px;
+                height: 26px;
             }
 
             .cityname{
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: 500;
             }
         }
     }
 
     .cardMid{
-        height: 65%;
+        height: 260px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
+
+        .image{
+            display: grid;
+            align-items: center;
+            justify-content: center;
+        }
 
         .dateToday{
             font-size: 18px;
@@ -51,8 +57,7 @@
     }
 
     .cardFoot{
-        height: 25%;
-        padding: 10px;
+        padding: 0 10px;
 
         .extraDetails{
             display: flex;
@@ -74,4 +79,88 @@
     #lctn{
         filter: invert(1);
     }
+}
+
+
+@media screen and (max-width: 580px){
+    #wthrcrd{
+        width: 100%;
+    }
+
+    #lctn{
+        width: 20px;
+        height: 18px;
+    }
+
+    #ctnme{
+        font-size: 16px;
+    }
+
+    #wthrimg{
+        width: 80px;
+        height: 80px;
+    }
+
+    #dtdy{
+        font-size: 16px;
+    }
+
+    #tmptdy{
+        font-size: 36px;
+    }
+
+    #rmrks{
+        font-size: 16px;
+    }
+
+    #extrdtls{
+        label{
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    
+}
+
+@media screen and (max-width: 425px){
+    #wthrcrd{
+        width: 100%;
+    }
+
+    #lctn{
+        width: 18px;
+        height: 16px;
+    }
+
+    #ctnme{
+        font-size: 14px;
+    }
+
+    #wthrimg{
+        width: 80px;
+        height: 80px;
+    }
+
+    #dtdy{
+        font-size: 14px;
+    }
+
+    #tmptdy{
+        font-size: 32px;
+    }
+
+    #rmrks{
+        font-size: 14px;
+    }
+
+    #extrdtls{
+        label, p{
+            font-size: 14px;
+        }
+        
+    }
+
 }

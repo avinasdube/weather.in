@@ -1,0 +1,62 @@
+
+
+.greetingBox-light{
+    background-color: white;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    border-radius: 20px;
+
+    .notificationSection{
+        width: 60%;
+
+        .currentTimeDate{
+
+            .currentTime{
+                font-size: 36px;
+                font-weight: 500;
+            }
+
+            .currentMonthYear{
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.greetingBox-dark{
+    background-color: #1b1b1b;
+}
+
+
+@media screen and (max-width: 1200px){
+
+}
+
+
+@media screen and (max-width: 540px){
+    #htbx{
+        height: min-content;
+    }
+    #crntime{
+        font-size: 30px;
+    }
+
+    #crntmnth{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #crntime{
+        font-size: 24px;
+    }
+
+    #crntmnth{
+        font-size: 10px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+}

@@ -76,3 +76,69 @@
     background-color: #1b1b1b;
     color: white;
 }
+
+
+@media screen and (max-width: 580px){
+    #sndtlbx{
+        width: 100%;
+        height: min-content;
+    }
+
+    #sntmcrd{
+        height: min-content;
+    }
+
+    #sndtlhead{
+        font-size: 16px;
+    }
+
+    #ctnme{
+        font-size: 16px;
+    }
+
+    #snimg{
+        width: 60px;
+        height: 60px;
+    }
+
+    #snhead{
+        font-size: 16px;
+    }
+
+    #sntme{
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width: 500px){
+    
+}
+
+@media screen and (max-width: 425px){
+    #sndtlbx{
+        width: 100%;
+        height: min-content;
+    }
+
+    #sndtlhead{
+        font-size: 16px;
+    }
+
+    #ctnme{
+        font-size: 14px;
+    }
+
+    #snimg{
+        width: 40px;
+        height: 40px;
+    }
+
+    #snhead{
+        font-size: 14px;
+    }
+
+    #sntme{
+        font-size: 10px;
+    }
+}

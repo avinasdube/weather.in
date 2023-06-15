@@ -67,7 +67,7 @@ const DailyForecast = () => {
     <div className="dailyForecast">
       <div className='categoryBox'>
         {dailyCard.map(dCard =>(
-          <div className={`weatherInfo-light ${theme === 'light' ? 'weatherInfo-light' : 'weatherInfo-dark'}`} key={dailyCard.key} id='wthrInfCrd'>
+          <div className={`weatherInfo-light ${theme === 'light' ? 'weatherInfo-light' : 'weatherInfo-dark'}`} id='wthrInfCrd' key={dCard.id}>
             <img src={dCard.image} alt=''></img>
             <div className='dayname' id='getDay'>{dCard.day}</div>
             <div className='tempdetails'>{dCard.temp}</div >

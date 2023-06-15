@@ -1,7 +1,6 @@
 .airQualityIndex-light {
     background-color: white;
     color: black;
-    height: 300px;
     width: 460px;
     border-radius: 20px;
     padding: 20px;
@@ -75,29 +74,21 @@
             align-items: center;
             justify-content: right;
 
-            .refreshButton {
-                display: grid;
-                align-items: right;
-                justify-content: right;
-
-                button {
-                    border: none;
-                    background-color: rgba(63, 63, 255, 0.272);
-                    padding: 6px 14px;
-                    border-radius: 8px;
-                    width: 100px;
-                    color: blue;
-                    font-size: 14px;
-                    font-weight: 600;
-                    font-family: system-ui;
-                    cursor: pointer;
-                }
-
-                button:hover{
-                    background-color: rgba(0, 128, 0, 0.275);
-                    color: green;
-                    font-size: 14.5px;
-                }
+            .aqiDetails {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: rgba(255, 63, 63, 0.505);
+                color: red;
+                padding: 6px 14px;
+                border-radius: 8px;
+                width: 80px;
+                height: 40px;
+                font-size: 14px;
+                font-weight: 650;
+                font-family: system-ui;
+                font-size: 20px;
+                cursor: pointer;
             }
         }
     }
@@ -142,5 +133,163 @@
 
     #gsIndBx{
         color: white;
+    }
+}
+
+@media screen and (max-width: 580px){
+    #arqltybx{
+        width: 100%;
+
+        .headingText{
+            font-size: 16px;
+        }
+
+        .location{
+
+            img{
+                width: 20px;
+                height: 18px;
+            }
+
+            .cityname{
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+
+        .mid {
+    
+            .midleft {
+    
+                .midIcon {
+
+                    img {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+    
+                .midQualityText {
+    
+                    .qualityHead {
+                        font-size: 20px;
+                    }
+    
+                    .qualityQuote {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .midright {
+    
+                .aqiDetails {
+                    width: 60px;
+                    height: 25px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .foot {
+            justify-content: space-between;
+    
+            .gasIndexBox {
+                width: 70px;
+                height: 80px;
+    
+                .quantity{
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+
+                .gasName{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    #arqltybx {
+        .foot {
+            justify-content: space-between;
+
+            .gasIndexBox {
+                width: 50px;
+                height: 80px;
+
+                .quantity {
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+                .gasName {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    #arqltybx{
+        .mid {
+            justify-content: space-between;
+    
+            .midleft {
+    
+                .midIcon {
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+    
+                .midQualityText {
+    
+                    .qualityHead {
+                        font-size: 16px;
+                    }
+    
+                    .qualityQuote {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .midright {
+    
+                .aqiDetails {
+                    width: 50px;
+                    height: 25px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .foot {
+            justify-content: space-between;
+
+            .gasIndexBox {
+                width: 35px;
+                height: 60px;
+                border-radius: 16px;
+
+                .quantity {
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                .gasName {
+                    font-size: 10px;
+                }
+            }
+        }
     }
 }
