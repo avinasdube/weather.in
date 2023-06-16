@@ -23,13 +23,13 @@ body {
 
         .appMid{
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             gap: 20px;
 
             .appMidLeft{
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
                 gap: 20px;
 
                 .appMidLeftTop{
@@ -39,7 +39,6 @@ body {
 
                 .appMidLeftBottom{
                     display: flex;
-                    flex-wrap: wrap;
                     justify-content: space-between;
                     gap: 20px;
                 }
@@ -58,18 +57,33 @@ body {
         color: white;
     }
     
-    @media screen and (max-width: 1000px){
+
+    @media screen and (max-width: 1360px){
         #appmid{
-            flex-direction: column;
+            flex-direction: column-reverse;
+
+
+            #appmidleft{
+                .appMidLeftBottom{
+                    width: auto;
+                    flex-direction: column;
+                }
+            }
         }
 
         #appmidleft{
             width: 100%;
-        }
 
-        #appmidright{
-            width: 100%;
-            justify-content: left;
+            .appMidLeftBottom{
+                width: auto;
+                flex-direction: column;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        #app{
+            padding: 14px;
         }
     }
 }

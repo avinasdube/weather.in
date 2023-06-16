@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import './GreetingSection.scss';
 import { ModeContext } from '../../context/ModeContext';
+import weatherhead from '../../assets/images/weatherhead.jpg';
 
 
 const GreetingSection = () => {
@@ -31,7 +32,10 @@ const GreetingSection = () => {
                     <div className='currentTime' id='crntime'> {currentTime} {amPm}</div>
                     <div className='currentMonthYear' id='crntmnth'>{currentDay}, {currentDateToday} {currentMonth}, {currentYear}</div>
                 </div>
-                <p>Good Morning, User !</p>
+                <p>Hello, User !</p>
+            </div>
+            <div className='greetimg' id='grtimg'>
+                <img src={weatherhead} alt=''></img>
             </div>
         </div>
     )

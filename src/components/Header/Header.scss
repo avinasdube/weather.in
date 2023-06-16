@@ -14,141 +14,146 @@ $secondcolor: #ff5100;
     padding: 20px;
     border-radius: 20px;
 
-    .headerLeft {
-        flex: 85%;
+    .header {
+        flex: 100%;
         display: flex;
-        align-items: left;
         justify-content: space-between;
         background-color: whitesmoke;
         padding: 0 10px;
         gap: 20px;
         border-radius: 8px;
 
-        .logoSection{
+        .logoSection {
             display: flex;
             align-items: center;
             gap: 20px;
 
-            .logo{
+            .logo {
                 display: grid;
                 align-items: center;
                 justify-content: center;
                 width: 48px;
                 height: 48px;
-    
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
-    
-            .appName{
+
+            .appName {
                 display: grid;
                 align-items: center;
                 justify-content: center;
-                font-family: system-ui;
+                font-family: 'MS Reference Sans Serif';
                 font-size: 25px;
                 font-weight: 600;
             }
         }
 
-        .locationSelector{
+        .headerRight {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            z-index: +1;
+            gap: 20px;
 
-            .selectDropdown{
-                display: flex;
-                padding: 10px ;
-                border-radius: 8px;
-                align-items: center;
-                justify-content: center;
-                width: 190px;
-                gap: 60px;
-                margin-top: 4px;
-                background-color: white;
-                cursor: pointer;
-
-                .defaultCityName{
-                    font-weight: 500;
-                }
-
-                .arrowDownIcon{
-                    width: 5px;
-                    height: 5px;
-                    border-right: 2px solid black;
-                    border-bottom: 2px solid black;
-                    transform: rotate(45deg);
-                }
-
-                .arrowDownIcon-up{
-                    transform: rotate(225deg);
-                }
-            }
-
-            .citiesList{
-                padding: 16px;
+            .locationSelector {
                 display: flex;
                 flex-direction: column;
-                background-color: white;
-                border-radius: 8px;
-                width: 174px;
-                height: 400px;
-                margin-top: -20px;
+                align-items: center;
+                gap: 10px;
+                z-index: +5;
 
-                .citiesScrollBox{
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
-    
-                    .options{
-                        margin-top: -10px;
-    
-                        option{
-                            margin-left: -44px;
-                            margin-bottom: -20px;
-                            padding: 6px;
-                            border-radius: 8px;
-                            font-weight: 400;
-                            cursor: pointer;
-                        }
-    
-                        option:hover{
-                            background-color: #e5e5e5;
-                        }
+                .selectDropdown {
+                    display: flex;
+                    padding: 10px;
+                    border-radius: 8px;
+                    align-items: center;
+                    justify-content: center;
+                    width: 190px;
+                    gap: 60px;
+                    margin-top: 4px;
+                    background-color: white;
+                    cursor: pointer;
+
+                    .defaultCityName {
+                        font-weight: 500;
+                    }
+
+                    .arrowDownIcon {
+                        width: 5px;
+                        height: 5px;
+                        border-right: 2px solid black;
+                        border-bottom: 2px solid black;
+                        transform: rotate(45deg);
+                    }
+
+                    .arrowDownIcon-up {
+                        transform: rotate(225deg);
                     }
                 }
 
-                .citiesScrollBox::-webkit-scrollbar{
-                    width: 0;
+                .citiesList {
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: white;
+                    border-radius: 8px;
+                    width: 174px;
+                    height: 400px;
+                    margin-top: -20px;
+
+                    .citiesScrollBox {
+                        overflow-y: auto;
+                        scroll-behavior: smooth;
+
+                        .options {
+                            margin-top: -10px;
+
+                            option {
+                                margin-left: -44px;
+                                margin-bottom: -20px;
+                                padding: 6px;
+                                border-radius: 8px;
+                                font-weight: 400;
+                                cursor: pointer;
+                            }
+
+                            option:hover {
+                                background-color: #e5e5e5;
+                            }
+                        }
+                    }
+
+                    .citiesScrollBox::-webkit-scrollbar {
+                        width: 0;
+                    }
+                }
+
+                .citiesList.active {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(20px);
+                    transition: 0.2s ease-in-out;
+                }
+
+                .citiesList.inactive {
+                    visibility: hidden;
+                    transform: translateY(-20px);
+                    transform: 0.2s ease-in;
                 }
             }
 
-            .citiesList.active{
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(20px);
-                transition: 0.2s ease-in-out;
-            }
-
-            .citiesList.inactive{
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(-20px);
-                transform: 0.2s ease-in;
+            .modeToggleBox {
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
-    }
 
-    .headerRight{
-        flex: 15%;
-        display: flex;
-        position: relative;
+
     }
 }
 
-.headerContainer-dark{
+.headerContainer-dark {
     display: flex;
     height: 50px;
     gap: 20px;
@@ -157,7 +162,7 @@ $secondcolor: #ff5100;
     padding: 20px;
     border-radius: 20px;
 
-    .headerLeft {
+    .header {
         flex: 85%;
         display: flex;
         align-items: left;
@@ -167,25 +172,25 @@ $secondcolor: #ff5100;
         gap: 20px;
         border-radius: 8px;
 
-        .logoSection{
+        .logoSection {
             display: flex;
             align-items: center;
             gap: 20px;
 
-            .logo{
+            .logo {
                 display: grid;
                 align-items: center;
                 justify-content: center;
                 width: 48px;
                 height: 48px;
-    
-                img{
+
+                img {
                     width: 100%;
                     height: 100%;
                 }
             }
-    
-            .appName{
+
+            .appName {
                 display: grid;
                 align-items: center;
                 justify-content: center;
@@ -195,156 +200,180 @@ $secondcolor: #ff5100;
             }
         }
 
-        .locationSelector{
+        .headerRight {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            z-index: +1;
+            gap: 20px;
 
-            .selectDropdown{
-                display: flex;
-                padding: 10px;
-                border-radius: 8px;
-                align-items: center;
-                justify-content: center;
-                gap: 60px;
-                width: 190px;
-                margin-top: 4px;
-                background-color: #1b1b1b;
-                cursor: pointer;
-
-                .defaultCityName{
-                    font-weight: 500;
-                }
-
-                #arwicn{
-                    width: 5px;
-                    height: 5px;
-                    border-right: 2px solid white;
-                    border-bottom: 2px solid white;
-                    transform: rotate(45deg);
-                }
-
-                .arrowDownIcon-up{
-                    transform: rotate(225deg);
-                }
-            }
-
-            .citiesList{
-                padding: 20px;
+            .locationSelector {
                 display: flex;
                 flex-direction: column;
-                background-color: #1b1b1b;
-                border-radius: 8px;
-                width: 174px;
-                height: 400px;
-                margin-top: -20px;
+                align-items: center;
+                gap: 10px;
+                z-index: +1;
 
-                .citiesScrollBox{
-                    overflow-y: auto;
-                    scroll-behavior: smooth;
-    
-                    .options{
-                        margin-top: -10px;
-    
-                        option{
-                            margin-left: -44px;
-                            margin-bottom: -20px;
-                            padding: 8px;
-                            border-radius: 8px;
-                            font-weight: 400;
-                            cursor: pointer;
-                        }
-    
-                        option:hover{
-                            background-color: #2f2f2f;
-                        }
+                .selectDropdown {
+                    display: flex;
+                    padding: 10px;
+                    border-radius: 8px;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 60px;
+                    width: 190px;
+                    margin-top: 4px;
+                    background-color: #1b1b1b;
+                    cursor: pointer;
+
+                    .defaultCityName {
+                        font-weight: 500;
+                    }
+
+                    .arrowDownIcon {
+                        width: 5px;
+                        height: 5px;
+                        border-right: 2px solid white;
+                        border-bottom: 2px solid white;
+                        transform: rotate(45deg);
+                    }
+
+                    .arrowDownIcon-up {
+                        transform: rotate(225deg);
                     }
                 }
 
-                .citiesScrollBox::-webkit-scrollbar{
-                    width: 0;
+                .citiesList {
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #1b1b1b;
+                    border-radius: 8px;
+                    width: 174px;
+                    height: 400px;
+                    margin-top: -20px;
+
+                    .citiesScrollBox {
+                        overflow-y: auto;
+                        scroll-behavior: smooth;
+
+                        .options {
+                            margin-top: -10px;
+
+                            option {
+                                margin-left: -44px;
+                                margin-bottom: -20px;
+                                padding: 8px;
+                                border-radius: 8px;
+                                font-weight: 400;
+                                cursor: pointer;
+                            }
+
+                            option:hover {
+                                background-color: #2f2f2f;
+                            }
+                        }
+                    }
+
+                    .citiesScrollBox::-webkit-scrollbar {
+                        width: 0;
+                    }
                 }
+
+                .citiesList.active {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(20px);
+                    transition: 0.2s ease-in-out;
+                }
+
+                .citiesList.inactive {
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-20px);
+                    transform: 0.2s ease-in;
+                }
+
             }
 
-            .citiesList.active{
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(20px);
-                transition: 0.2s ease-in-out;
-            }
-
-            .citiesList.inactive{
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(-20px);
-                transform: 0.2s ease-in;
+            .modeToggleBox { 
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
-    }
-
-    .headerRight{
-        flex: 15%;
-        display: flex;
-        position: relative;
     }
 }
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px) {
 
-    #hdrlft{
+    #hdr {
         gap: 10px;
         width: 200px;
     }
 
-    #applgo{
+    #applgo {
         width: 30px;
         height: 30px;
     }
-   
 
-    #appNm{
+
+    #appNm {
         font-size: 14px;
     }
 
-    #slctDrpdn{
+    #slctDrpdn {
         margin-top: 6px;
         padding: 10px;
         font-size: 12px;
     }
 
-    #optn{
+    #optn {
         font-size: 14px;
     }
 }
 
 
-@media screen and (max-width: 510px){
-    .locationSelector{
+@media screen and (max-width: 510px) {
+    #hdrght{
+        gap: 10px;
+    }
+
+    #lctnslct{
         width: 100px;
     }
 
-    #slctDrpdn{
+    .locationSelector {
+        width: 100px;
+    }
+
+    #slctDrpdn {
         width: 80px;
         gap: 20px;
     }
 
-    #ctylst{
+    #ctylst {
         width: 70px;
     }
 
-    #optn{
+    #optn {
         font-size: 12px;
     }
 }
 
-@media screen and (max-width: 425px){
-    #slctDrpdn{
-        flex-direction: column;
-        gap: 2px;
-        padding: 6px 2px;
-        width: 70px;
+@media screen and (max-width: 425px) {
+
+    #hdrght{
+        gap: 25px;
+    }
+
+    #lctnslct{
+        width: 50px;
+    }
+
+    #slctDrpdn {
+        flex-direction: row;
+        margin-top: 14px;
+        gap: 8px;
+        padding: 4px 2px;
+        width: 60px;
     }
 }

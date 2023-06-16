@@ -1,166 +1,263 @@
-.weatherPhoneCard-light{
-    height: 460px;
-    width: 380px;
+.weatherPhoneCard-light {
+    width: 300px;
     background-color: white;
     border-radius: 20px;
     padding: 20px;
 
-    .cardHead{
-        height: 30px;
+    .cardHead {
 
-        .location{
+        .location {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 5px;
 
-            img{
-                width: 28px;
-                height: 26px;
+            img {
+                width: 24px;
+                height: 22px;
             }
 
-            .cityname{
+            .cityname {
                 font-size: 16px;
                 font-weight: 500;
             }
         }
     }
 
-    .cardMid{
-        height: 260px;
+    .cardbody {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
 
-        .image{
-            display: grid;
+        .cardMid {
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+
+            .imgdate{
+                display: flex;
+                flex-direction: column;
+                .image {
+                    display: grid;
+                    align-items: center;
+                    justify-content: center;
+                }
+    
+                .dateToday {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+
+            .tempremark{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .temp {
+                    font-size: 60px;
+                    font-weight: bold;
+                }
+    
+                .remarks {
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+            
         }
 
-        .dateToday{
-            font-size: 18px;
-            font-weight: 600;
-        }
+        .cardFoot {
+            padding: 0 10px;
 
-        .temp{
-            font-size: 60px;
-            font-weight: bold;
-        }
+            .extraDetails {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 35px;
 
-        .remarks{
-            font-size: 20px;
-            font-weight: 500;
-        }
-    }
+                label {
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 20px;
 
-    .cardFoot{
-        padding: 0 10px;
-
-        .extraDetails{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 35px;
-
-            label{
-                font-weight: 600;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
             }
         }
     }
 }
 
-.weatherPhoneCard-dark{
+.weatherPhoneCard-dark {
     background-color: #1b1b1b;
-    color:white;
+    color: white;
 
-    #lctn{
+    #lctn {
         filter: invert(1);
     }
 }
 
-
-@media screen and (max-width: 580px){
+@media screen and (max-width: 1360px) {
     #wthrcrd{
+        width: 100%;
+        height: fit-content;
+    }
+
+    #lctnmain {
+        justify-content: left;
+    }
+
+    #crdbdy{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap:20px;
+
+        #crdmid{
+            flex: 40%;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+
+            #imgdt{
+                flex-direction: column;
+            }
+
+            #rmrks{
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        #crdft{
+            flex: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 760px){
+    #crdbdy{
+
+        #crdmid{
+
+            #imgdt{
+                #dtdy{
+                    font-size: 16px;
+                }
+            }
+
+            #tmprmrk{
+                #tmptdy{
+                    font-size: 6vw;
+                }
+            }
+        }
+
+        #crdft{
+            flex: 30%;
+        }
+    }
+}
+
+@media screen and (max-width: 580px) {
+
+    #crdbdy{
+        flex-direction: column;
+        gap: 20px;
+
+        #crdmid{
+            flex-direction: column;
+
+            #rmrks{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    #wthrcrd {
         width: 100%;
     }
 
-    #lctn{
+    #lctn {
         width: 20px;
         height: 18px;
     }
 
-    #ctnme{
+    #ctnme {
         font-size: 16px;
     }
 
-    #wthrimg{
+    #wthrimg {
         width: 80px;
         height: 80px;
     }
 
-    #dtdy{
+    #dtdy {
         font-size: 16px;
     }
 
-    #tmptdy{
+    #tmptdy {
         font-size: 36px;
     }
 
-    #rmrks{
+    #rmrks {
         font-size: 16px;
     }
 
-    #extrdtls{
-        label{
+    #extrdtls {
+        label {
             font-size: 16px;
         }
     }
 
 }
 
-@media screen and (max-width: 500px){
-    
-}
-
-@media screen and (max-width: 425px){
-    #wthrcrd{
+@media screen and (max-width: 425px) {
+    #wthrcrd {
         width: 100%;
     }
 
-    #lctn{
+    #lctn {
         width: 18px;
         height: 16px;
     }
 
-    #ctnme{
+    #ctnme {
         font-size: 14px;
     }
 
-    #wthrimg{
+    #wthrimg {
         width: 80px;
         height: 80px;
     }
 
-    #dtdy{
+    #dtdy {
         font-size: 14px;
     }
 
-    #tmptdy{
+    #tmptdy {
         font-size: 32px;
     }
 
-    #rmrks{
+    #rmrks {
         font-size: 14px;
     }
 
-    #extrdtls{
-        label, p{
+    #extrdtls {
+
+        label,
+        p {
             font-size: 14px;
         }
-        
+
     }
 
 }

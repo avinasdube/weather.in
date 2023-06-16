@@ -6,6 +6,7 @@ import AirQualityIndex from './components/AirQuality/AirQualityIndex';
 import SunDetails from './components/SunDetails/SunDetails';
 import WeatherPhone from './components/WeatherPhone/WeatherPhone';
 import GreetingSection from './components/GreetingSection/GreetingSection';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <ModeContext.Provider value={{theme, modeToggle}}> 
-        <div className={`app-light ${theme === 'light' ? 'app-light' : 'app-dark'}`}>
+        <div className={`app-light ${theme === 'light' ? 'app-light' : 'app-dark'}`} id='app'>
           <Header theme={theme} />
           <div className='appMid' id='appmid'>
             <div className='appMidLeft' id='appmidleft'>
@@ -37,6 +38,7 @@ function App() {
               <WeatherPhone />
             </div>
           </div>
+          <Footer />
         </div>
       </ModeContext.Provider>
     </>

@@ -12,14 +12,14 @@ import axios from 'axios';
 const Header = () => {
 
     // FUNCTION TO CLOSE THE MENU BAR WHEN CLICKED OUTSIDE ANYWHERE
-  
+
     let menuRef = useRef();
 
-    useEffect(()=>{
-        let handler = (e)=>{
-        if(!menuRef.current.contains(e.target)){
-            setDropdown(false);
-        }
+    useEffect(() => {
+        let handler = (e) => {
+            if (!menuRef.current.contains(e.target)) {
+                setDropdown(false);
+            }
         };
 
         document.addEventListener("mousedown", handler);
@@ -33,13 +33,13 @@ const Header = () => {
 
     // FUNCTION TO TOGGLE THEMES ON CLICK
 
-    const dropdownToggle = ()=>{
+    const dropdownToggle = () => {
         dropdown === false ? setDropdown(true) : setDropdown(false);
     }
 
     const { state: { city }, dispatch } = UseWeatherContext();
 
-    const handleCityChange = (e)=>{
+    const handleCityChange = (e) => {
 
         const selectedCity = cities.filter((city) => {
             return city.city === e.target.value
@@ -66,15 +66,14 @@ const Header = () => {
     let long = city && city.lng ? city.lng : '';
     let exclude = 'hourly, minutely';
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&exclude=${exclude}&units=metric&lang=tr&appid=${APIKEY}`
-    
+
     // URL FOR AIR QUALITY DETAILS
 
     const aqUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${long}&appid=${APIKEY}`;
 
-    const fetchData = ()=>{
-        axios(url).then((data)=>{
-            if(data.status === 200)
-            {
+    const fetchData = () => {
+        axios(url).then((data) => {
+            if (data.status === 200) {
                 let currentData = data.data;
 
                 dispatch({
@@ -82,14 +81,13 @@ const Header = () => {
                     payload: currentData
                 })
             }
-            else{
+            else {
                 alert('Not Connected');
             }
         })
 
-        axios(aqUrl).then((data)=>{
-            if(data.status === 200)
-            {
+        axios(aqUrl).then((data) => {
+            if (data.status === 200) {
                 let aqData = data.data;
 
                 dispatch({
@@ -97,49 +95,52 @@ const Header = () => {
                     payload: aqData
                 })
             }
-            else{
+            else {
                 alert('Not Connected');
             }
         })
 
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchData();
-    },[city])
-
+    }, [city])
 
     return (
         <div className={`headerContainer ${theme === 'light' ? 'headerContainer-light' : 'headerContainer-dark'}`}>
-            <div className="headerLeft" id='hdrlft'>
+            <div className="header" id='hdr'>
                 <div className='logoSection' id='lgsctn'>
                     <div className='logo' id='applgo'><img src={weatherinlogo} alt=''></img></div>
                     <div className='appName' id='appNm'>Weather.In</div>
                 </div>
 
-                <div className='locationSelector'>
-                    <div className='selectDropdown' onClick={dropdownToggle} id='slctDrpdn'>
-                        <div className='defaultCityName' id='slctct'>{city.city}</div>
-                        <span className={`arrowDownIcon ${dropdown === true ? 'arrowDownIcon-up' : 'arrowDownIcon'}`} id='arwicn'></span>
-                    </div>
-                    <div className={`citiesList ${dropdown === true ? 'active' : 'inactive'}`} id='ctylst' ref={menuRef} defaultValue={city} onChange={handleCityChange}>
-                        <div className='citiesScrollBox'>
-                            {
-                                cities && cities.length > 0 && cities.map((city) => {
+                <div className='headerRight' id='hdrght'>
+                    <div className='locationSelector' id='lctnslct'>
+                        <div className='selectDropdown' onClick={dropdownToggle} id='slctDrpdn'>
+                            <div className='defaultCityName' id='slctct'>{city.city}</div>
+                            <span className={`arrowDownIcon ${dropdown === true ? 'arrowDownIcon-up' : 'arrowDownIcon'}`} id='arwicn'></span>
+                        </div>
+                        <div className={`citiesList ${dropdown === true ? 'active' : 'inactive'}`} id='ctylst' ref={menuRef} defaultValue={city} onChange={handleCityChange}>
+                            <div className='citiesScrollBox'>
+                                {
+                                    cities && cities.length > 0 && cities.map((city) => {
 
-                                    return [
-                                        <ul className='options' key={`${city.population}${city.lat}`} value={city.city}>
-                                            <option value={city.city} onClick={(e)=>{handleCityChange(e); setDropdown(false)}} id='optn'>{city.city} - {city.admin_name}</option>
-                                        </ul>
-                                    ]
-                                })
-                            }
+                                        return [
+                                            <ul className='options' key={`${city.population}${city.lat}`} value={city.city}>
+                                                <option value={city.city} onClick={(e) => { handleCityChange(e); setDropdown(false) }} id='optn'>{city.city} - {city.admin_name}</option>
+                                            </ul>
+                                        ]
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
+
+                    <div className='modeToggleBox'>
+                        <ModeToggle />
+                    </div>
+
                 </div>
-            </div>
-            <div className='headerRight' id='hdrght'>
-                <ModeToggle />
             </div>
         </div>
     )
