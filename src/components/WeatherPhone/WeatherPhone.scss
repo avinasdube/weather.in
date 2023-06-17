@@ -145,21 +145,6 @@
 @media screen and (max-width: 760px){
     #crdbdy{
 
-        #crdmid{
-
-            #imgdt{
-                #dtdy{
-                    font-size: 16px;
-                }
-            }
-
-            #tmprmrk{
-                #tmptdy{
-                    font-size: 6vw;
-                }
-            }
-        }
-
         #crdft{
             flex: 30%;
         }
@@ -177,6 +162,7 @@
 
             #rmrks{
                 width: 100%;
+                font-size: 18px;
                 text-align: center;
             }
         }
@@ -204,17 +190,18 @@
         font-size: 16px;
     }
 
-    #tmptdy {
-        font-size: 36px;
-    }
-
-    #rmrks {
-        font-size: 16px;
+    #tmptdy{
+        font-size: 50px;
     }
 
     #extrdtls {
         label {
             font-size: 16px;
+
+            img{
+                width: 20px;
+                height: 20px;
+            }
         }
     }
 
@@ -244,11 +231,11 @@
     }
 
     #tmptdy {
-        font-size: 32px;
+        font-size: 40px;
     }
 
     #rmrks {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     #extrdtls {

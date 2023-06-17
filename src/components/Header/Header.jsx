@@ -47,8 +47,6 @@ const Header = () => {
 
         const selectedCityName = selectedCity.city;
 
-        console.log(selectedCityName)
-
         const selectHead = document.getElementById('slctct');
 
         selectHead.innerText = selectedCityName;
@@ -115,18 +113,18 @@ const Header = () => {
                 </div>
 
                 <div className='headerRight' id='hdrght'>
-                    <div className='locationSelector' id='lctnslct'>
+                    <div className='locationSelector' id='lctnslct' ref={menuRef} >
                         <div className='selectDropdown' onClick={dropdownToggle} id='slctDrpdn'>
                             <div className='defaultCityName' id='slctct'>{city.city}</div>
                             <span className={`arrowDownIcon ${dropdown === true ? 'arrowDownIcon-up' : 'arrowDownIcon'}`} id='arwicn'></span>
                         </div>
-                        <div className={`citiesList ${dropdown === true ? 'active' : 'inactive'}`} id='ctylst' ref={menuRef} defaultValue={city} onChange={handleCityChange}>
+                        <div className={`citiesList ${dropdown === true ? 'active' : 'inactive'}`} id='ctylst' defaultValue={city} onChange={handleCityChange}>
                             <div className='citiesScrollBox'>
                                 {
                                     cities && cities.length > 0 && cities.map((city) => {
 
                                         return [
-                                            <ul className='options' key={`${city.population}${city.lat}`} value={city.city}>
+                                            <ul className='options' key={`${city.population}${city.lat}`} value={city.city} >
                                                 <option value={city.city} onClick={(e) => { handleCityChange(e); setDropdown(false) }} id='optn'>{city.city} - {city.admin_name}</option>
                                             </ul>
                                         ]

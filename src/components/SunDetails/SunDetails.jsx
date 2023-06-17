@@ -3,6 +3,7 @@ import './SunDetails.scss';
 import { ModeContext } from '../../context/ModeContext';
 import sunrise from '../../assets/icons/sunrise.png';
 import sunset from '../../assets/icons/sunset.png';
+import location from '../../assets/icons/location.png';
 import { UseWeatherContext } from '../../context/WeatherContext';
 
 const SunDetails = () => {
@@ -35,11 +36,12 @@ const SunDetails = () => {
                             </div>
                             <div className='mid'>
                                 <div className='sunTimeCard' id='sntmcrd'>
-                                    <div className='cityName' id='ctnme'>
-                                        {city.city}
+                                    <div className='location'>
+                                        <img src={location} alt='' id='lctn'></img>
+                                        <div className='cityname' id='ctnme'>{city.city}</div>
                                     </div>
                                     <div className='sunInfoBox'>
-                                        <div className='detailBox'>
+                                        <div className='detailBox' id='snbx'>
                                             <div className='Image'>
                                                 <img src={sunrise} alt='' id='snimg'></img>
                                             </div>
@@ -66,6 +68,10 @@ const SunDetails = () => {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div className='sunIllus' id='sntmcrd'>
+
                                 </div>
                             </div>
                         </div>

@@ -45,7 +45,7 @@ $secondcolor: #ff5100;
                 display: grid;
                 align-items: center;
                 justify-content: center;
-                font-family: 'MS Reference Sans Serif';
+                font-family: system-ui;
                 font-size: 25px;
                 font-weight: 600;
             }
@@ -67,9 +67,8 @@ $secondcolor: #ff5100;
                     padding: 10px;
                     border-radius: 8px;
                     align-items: center;
-                    justify-content: center;
+                    justify-content: space-between;
                     width: 190px;
-                    gap: 60px;
                     margin-top: 4px;
                     background-color: white;
                     cursor: pointer;
@@ -92,7 +91,7 @@ $secondcolor: #ff5100;
                 }
 
                 .citiesList {
-                    padding: 16px;
+                    padding: 20px;
                     display: flex;
                     flex-direction: column;
                     background-color: white;
@@ -106,10 +105,10 @@ $secondcolor: #ff5100;
                         scroll-behavior: smooth;
 
                         .options {
-                            margin-top: -10px;
+                            margin-top: 0;
 
                             option {
-                                margin-left: -44px;
+                                margin-left: -40px;
                                 margin-bottom: -20px;
                                 padding: 6px;
                                 border-radius: 8px;
@@ -255,10 +254,10 @@ $secondcolor: #ff5100;
                         scroll-behavior: smooth;
 
                         .options {
-                            margin-top: -10px;
+                            margin-top: 0;
 
                             option {
-                                margin-left: -44px;
+                                margin-left: -40px;
                                 margin-bottom: -20px;
                                 padding: 8px;
                                 border-radius: 8px;
@@ -307,7 +306,7 @@ $secondcolor: #ff5100;
 
     #hdr {
         gap: 10px;
-        width: 200px;
+        width: 60%;
     }
 
     #applgo {
@@ -335,23 +334,16 @@ $secondcolor: #ff5100;
 @media screen and (max-width: 510px) {
     #hdrght{
         gap: 10px;
-    }
-
-    #lctnslct{
-        width: 100px;
-    }
-
-    .locationSelector {
-        width: 100px;
+        justify-content: space-between;
     }
 
     #slctDrpdn {
-        width: 80px;
-        gap: 20px;
+        width: 120px;
+        gap: 10px;
     }
 
     #ctylst {
-        width: 70px;
+        width: 100px;
     }
 
     #optn {
@@ -359,21 +351,32 @@ $secondcolor: #ff5100;
     }
 }
 
-@media screen and (max-width: 425px) {
-
+@media screen and (max-width: 400px) {
     #hdrght{
-        gap: 25px;
-    }
-
-    #lctnslct{
-        width: 50px;
+        gap: 4px;
+        justify-content: space-between;
     }
 
     #slctDrpdn {
-        flex-direction: row;
-        margin-top: 14px;
-        gap: 8px;
-        padding: 4px 2px;
-        width: 60px;
+        width: 100px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 390px){
+
+    #lctnslct{
+        width: 100px;
+    }
+    #hdrght{
+        margin-top: 2px;
+        gap: 0;
+        width: 140px;
+    }
+
+    #slctDrpdn {
+        width: 80px;
+        font-size: 11px;
     }
 }

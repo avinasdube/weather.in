@@ -41,9 +41,9 @@ const AirQualityIndex = () => {
     if(aqiStatus === "Good"){
       aqiLine.style.color = "Green";
     }else if(aqiStatus === "Moderate"){
-      aqiLine.style.color = "Yellow";
+      aqiLine.style.color = "#ff6f00";
     }else if(aqiStatus === "Severe"){
-      aqiLine.style.color = "Orangered";
+      aqiLine.style.color = "Red";
     }
   }
 
