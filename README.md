@@ -12,4 +12,10 @@
 ##
   
 # Screenshots from the Working App
+ 
+  <img alt="Screenshot 2022-10-15 at 1 19 54 PM" src="https://github.com/avinasdube/project-screenshots/blob/main/weather.in/screenshots/WTHRIN1.jpg"> 
+  
+##
+  
+  <img alt="Screenshot 2022-10-15 at 1 19 54 PM" src="https://github.com/avinasdube/project-screenshots/blob/main/weather.in/screenshots/WTHRIN2.jpg">
 
